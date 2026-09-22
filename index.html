@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Tài Xỉu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="wallet-box">
+          <span class="label">Ví tiền ảo</span>
+          <h2 id="balance">10.000</h2>
+        </div>
+        <button id="addBalanceBtn" class="secondary-btn">Nạp 500</button>
+      </header>
+
+      <main class="game-panel">
+        <div class="row between">
+          <label for="betAmount">Mức cược</label>
+          <input id="betAmount" type="number" min="10" step="10" value="100" />
+        </div>
+
+        <div class="row between dev-rate-row">
+          <label for="devRate">Tỷ lệ phát triển</label>
+          <div class="dev-rate-box">
+            <input id="devRate" type="number" min="0" max="50" step="0.1" value="5" />
+            <span>%</span>
+          </div>
+        </div>
+
+        <div class="choice-box">
+          <button class="pick-btn active" data-pick="Tài">TÀI</button>
+          <button class="pick-btn" data-pick="Xỉu">XỈU</button>
+        </div>
+
+        <div class="dice-area" aria-label="xúc xắc">
+          <div class="die" id="die1"></div>
+          <div class="die" id="die2"></div>
+          <div class="die" id="die3"></div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Kết quả</span>
+          <h3 id="resultText">Chờ quay...</h3>
+          <p id="totalText">Tổng: 0</p>
+        </div>
+
+        <button id="rollBtn" class="primary-btn">Quay tài xỉu</button>
+      </main>
+
+      <section class="history-panel">
+        <h3>Lịch sử</h3>
+        <ul id="historyList">
+          <li>Chưa có ván nào.</li>
+        </ul>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
